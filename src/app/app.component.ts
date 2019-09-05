@@ -8,6 +8,9 @@ import {COURSES} from '../db-data';
 })
 export class AppComponent {
 
+  intermediateCourse = COURSES[0];
+  beginnersCourse = COURSES[1];
+
 
 
 }
