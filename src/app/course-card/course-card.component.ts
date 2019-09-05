@@ -15,6 +15,8 @@ export class CourseCardComponent implements OnInit {
   // Input passed from parent to child component.
   @Input() course: Course;
 
+  @Input() courseIndex: number;
+
   // Output courseSelected / emits a value to parent component, the type of value which will be emitted.
   @Output() courseSelected = new EventEmitter<Course>();
 

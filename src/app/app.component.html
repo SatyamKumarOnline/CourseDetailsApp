@@ -4,7 +4,9 @@
 
 </div>
 
-<!--Here, we are passing input /value , course to our custom component -->
+<!--Here, we are passing input /value , 'course' to our custom component -->
 <!--Here, courseSelected event is emitted from child component, course-card to parent -->
-<course-card [course]="intermediateCourse" (courseSelected)=selectedCourse($event)> </course-card>
-<course-card [course]="beginnersCourse" (courseSelected)=selectedCourse($event)> </course-card>
+
+<div *ngFor='let courseItem of courseList; index as i'>
+    <course-card [course]="courseItem" (courseSelected)=selectedCourse($event) [courseIndex]='i+1'> </course-card>
+</div>
