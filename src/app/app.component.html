@@ -7,6 +7,8 @@
 <!--Here, we are passing input /value , 'course' to our custom component -->
 <!--Here, courseSelected event is emitted from child component, course-card to parent -->
 
-<div *ngFor='let courseItem of courseList; index as i'>
+<!-- Use ng-container as wrapping container, when content is dynamically generated
+  and there is no parent element for dynamically generated content-->
+<ng-container *ngFor='let courseItem of courseList; index as i'>
     <course-card [course]="courseItem" (courseSelected)=selectedCourse($event) [courseIndex]='i+1'> </course-card>
-</div>
+</ng-container>
