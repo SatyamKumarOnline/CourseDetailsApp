@@ -4,7 +4,7 @@
 
 </div>
 
-<!--Here, we are passing input to our custom component -->
-
-<course-card [course]="intermediateCourse"> </course-card>
-<course-card [course]="beginnersCourse"> </course-card>
+<!--Here, we are passing input /value , course to our custom component -->
+<!--Here, courseSelected event is emitted from child component, course-card to parent -->
+<course-card [course]="intermediateCourse" (courseSelected)=selectedCourse($event)> </course-card>
+<course-card [course]="beginnersCourse" (courseSelected)=selectedCourse($event)> </course-card>

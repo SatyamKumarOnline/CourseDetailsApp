@@ -7,10 +7,10 @@ import {COURSES} from '../db-data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   intermediateCourse = COURSES[0];
   beginnersCourse = COURSES[1];
-
-
-
+  selectedCourse(course) {
+    debugger;
+    console.log(11,course);
+  }
 }
