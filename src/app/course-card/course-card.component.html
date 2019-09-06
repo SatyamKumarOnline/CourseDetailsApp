@@ -1,9 +1,12 @@
-<div class="courses">
+<div class="courses" *ngIf='course'>
     <div class="course-card">
         <div class="course-title">
             {{courseIndex}} {{course.description}}
         </div>
-        <img width="300" alt="Angular Logo" src={{course.iconUrl}}>
+
+        <ng-container *ngIf='isImageVisible() else noImage'>
+            <img width="300" alt="Angular Logo" src={{course.iconUrl}}>
+        </ng-container>
         <div class="course-description">
             {{course.longDescription}}
         </div>
@@ -12,3 +15,7 @@
     </div>
 
 </div>
+
+<ng-template #noImage>
+    There is no image which is present.
+</ng-template>
