@@ -12,10 +12,14 @@ export class AppComponent {
 
   // ViewChild makes a reference to component template view either by componentname or reference.
   // makes reference to component in component template by component name.
+
+  @ViewChild('imgContainer', {static: false})
+  imgHolder: ElementRef;
+
   @ViewChild(CourseCardComponent, {static: false})
   courseItem: CourseCardComponent;
   // makes reference to component in component template
-  @ViewChild('courseCardDemo', {static: false})
+  @ViewChild('courseCardDemo', {static: false, read: ElementRef})
   courseElement: ElementRef;
 
   selectedCourse(course) {
@@ -31,6 +35,7 @@ export class AppComponent {
       */
 
     debugger;
+    this.imgHolder;
     this.courseItem;
     this.courseElement;
 
