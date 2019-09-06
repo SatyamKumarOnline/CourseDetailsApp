@@ -9,6 +9,9 @@
 
 <!-- Use ng-container as wrapping container, when content is dynamically generated
   and there is no parent element for dynamically generated content-->
+
+<course-card #courseCardDemo [course]="courseList[0]" (courseSelected)=selectedCourse($event)> </course-card>
+
 <ng-container *ngFor='let courseItem of courseList; index as i'>
     <course-card [course]="courseItem" (courseSelected)=selectedCourse($event) [courseIndex]='i+1'> </course-card>
 </ng-container>
