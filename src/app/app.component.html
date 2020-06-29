@@ -9,10 +9,10 @@
 
 <!-- Use ng-container as wrapping container, when content is dynamically generated
   and there is no parent element for dynamically generated content-->
+  <button (click)="editList()">Edit </button>
 <div #testContainer>
     11
 </div>
-<ng-container>
-    <course-card #cardRef1 [course]="courseList[1]" (courseSelected)=selectedCourse($event)> </course-card>
-    <course-card [course]="courseList[2]" (courseSelected)=selectedCourse($event)> </course-card>
+<ng-container *ngFor='let courseItem of courseList; index as i'>
+    <course-card [course]="courseItem" (courseSelected)=selectedCourse($event) [courseIndex]='i+1'> </course-card>
 </ng-container>
